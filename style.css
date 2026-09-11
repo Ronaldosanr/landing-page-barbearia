@@ -541,3 +541,123 @@ address {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* Titulo da Secao */
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title-gold {
+  color: #c5a059;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+/* Grid de servicos */
+.servicos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .servicos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+  /* Card individual */
+  .card-servico {
+    background-color: #1a1a1a;
+    border: 1px solid #2d333b;
+    border-radius: 12px;
+    overflow: visible; /* permite que a tag flutue para fora sem ser cortada */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card-servico:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Card Destaque (Central) */
+  .card-servico.destaque {
+    border: 2px solid #c5a059;
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.15);
+  }
+
+  /* Selo flutuando acima da borda do card */
+  .badge-destaque {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #c5a059;
+    color: #111;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    z-index: 10;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+  }
+
+  /* Garante que a imagem respeite o arredondamento superior */
+  .servico-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+  }
+
+  /* Conteudo Centralizado */
+  .servico-conteudo {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  .servico-conteudo h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+
+  .duracao {
+    font-size: 0.85rem;
+    color: #c5a059;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .servico-conteudo p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .servico-conteudo .preco {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #fff;
+  }
