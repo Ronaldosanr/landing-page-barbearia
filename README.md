@@ -24,5 +24,14 @@ Landing page comercial moderna e responsiva, desenvolvida para barbearias e est�
 2. Abra a pasta no VS Code.
 3. Abra o arquivo `index.html` diretamente em seu navegador (ou via extensão Live Server).
 
+## ⚙️ Configuração do WhatsApp
+
+Por padrão de demonstração, o formulário envia a mensagem para o próprio número informado pelo visitante para validação em tempo real.
+
+Para direcionar para um número comercial fixo, altere a constante no arquivo `script.js`:
+
+```javascript
+// Substitua pelo número da sua empresa (DDI + DDD + Número)
+const destino = '5543999999999';
 ---
 Desenvolvido por **Ronaldo Santana Junior**.
