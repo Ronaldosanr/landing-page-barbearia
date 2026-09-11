@@ -1,0 +1,528 @@
+/* ==========================================================================
+   1. Variáveis Globais & Design Tokens
+   ========================================================================== */
+:root {
+  --color-bg-dark: #121212;
+  --color-bg-alt: #1a1a1a;
+  --color-surface: #242424;
+  --color-primary: #d4af37;        /* Dourado vintage */
+  --color-primary-hover: #b8972e;
+  --color-text-main: #f5f5f5;
+  --color-text-muted: #a0a0a0;
+  --color-border: #333333;
+
+  --font-main: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 5rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   2. Reset & Estrutura Base
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-main);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ==========================================================================
+   3. Utilitários & Layout
+   ========================================================================== */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-padding {
+  padding: var(--spacing-xl) 0;
+}
+
+.bg-alt {
+  background-color: var(--color-bg-alt);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.section-title p {
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   4. Botões
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #121212;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: #121212;
+}
+
+.btn-sm {
+  padding: 0.4rem 1rem;
+  font-size: 0.875rem;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-sm:hover {
+  background-color: var(--color-primary);
+  color: #121212;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ==========================================================================
+   5. Header & Navegação
+   ========================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--color-text-main);
+}
+
+.logo span,
+.logo-footer span {
+  color: var(--color-primary);
+  font-style: italic;
+  font-weight: 400;
+  margin: 0 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.nav-links a:not(.btn):hover {
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   6. Hero Section
+   ========================================================================== */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at center, #262217 0%, var(--color-bg-dark) 80%);
+  padding: var(--spacing-xl) 0;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.tagline {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  font-size: 1.15rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   7. Seção Sobre
+   ========================================================================== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.sobre-texto h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.sobre-texto p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+.diferenciais-list li {
+  margin-bottom: var(--spacing-xs);
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.diferenciais-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+.destaque-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
+}
+
+.box-stat {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.stat-label {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   8. Cards de Serviços
+   ========================================================================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+}
+
+.destaque-card {
+  border-color: var(--color-primary);
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-primary);
+  color: #121212;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.8rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.card h3 {
+  font-size: 1.35rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.card .duracao {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.card .descricao {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.card .preco {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   9. Tabela de Horários
+   ========================================================================== */
+.horarios h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.horarios-table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.tabela-horarios {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  margin-top: var(--spacing-sm);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.tabela-horarios caption {
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.tabela-horarios th,
+.tabela-horarios td {
+  padding: 1rem;
+  text-align: left;
+}
+
+.tabela-horarios thead th {
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tabela-horarios tbody tr:not(:last-child) td {
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   10. Formulário de Agendamento
+   ========================================================================== */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--color-surface);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+fieldset {
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+legend {
+  color: var(--color-primary);
+  padding: 0 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-group {
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
+}
+
+label {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--color-bg-dark);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* ==========================================================================
+   11. Footer
+   ========================================================================== */
+.footer {
+  background-color: #0b0b0b;
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-lg) 0 var(--spacing-sm);
+  font-size: 0.9rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.logo-footer {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+address {
+  font-style: normal;
+  color: var(--color-text-muted);
+}
+
+.footer a {
+  color: var(--color-primary);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-sm);
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   12. Media Queries (Responsividade para Tablets e Desktops)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .destaque-box {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

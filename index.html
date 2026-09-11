@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Barbearia Navalha de Ouro - Cortes clássicos, barba alinhada e ambiente exclusivo. Agende seu horário online.">
+  <title>Barbearia Navalha de Ouro | Cortes Tradicionais e Modernos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho Institucional -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#home" class="logo">Navalha<span>de</span>Ouro</a>
+      <nav aria-label="Navegação Principal">
+        <ul class="nav-links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#horarios">Horários</a></li>
+          <li><a href="#contato" class="btn btn-sm">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Seção Principal (Hero Section) -->
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <p class="tagline">Tradição &amp; Elegância</p>
+        <h1>Mais que um corte de cabelo, uma experiência sob medida.</h1>
+        <p class="subtitle">Profissionais especializados em cortes clássicos e modernos, navalha afiada e toalha quente.</p>
+        <div class="hero-actions">
+          <a href="#contato" class="btn btn-primary">Agendar Horário</a>
+          <a href="#servicos" class="btn btn-secondary">Conhecer Serviços</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Sobre / Diferenciais -->
+    <section id="sobre" class="sobre section-padding">
+      <div class="container grid grid-2">
+        <div class="sobre-texto">
+          <h2>Excelência em cada detalhe desde 2018</h2>
+          <p>Unimos o padrão das barbearias tradicionais ao conforto da estrutura moderna. Atendimento exclusivo, produtos de primeira linha e ambiente climatizado com área de descanso.</p>
+          <ul class="diferenciais-list">
+            <li><strong>Atendimento Pontual:</strong> Sem filas e com agendamento garantido.</li>
+            <li><strong>Produtos Premium:</strong> Cuidados específicos para couro cabeludo e pele.</li>
+            <li><strong>Ambiente Climatizado:</strong> Conforto, bebidas e música ambiente.</li>
+          </ul>
+        </div>
+        <aside class="destaque-box">
+          <div class="box-stat">
+            <span class="stat-num">+5.000</span>
+            <span class="stat-label">Cortes Realizados</span>
+          </div>
+          <div class="box-stat">
+            <span class="stat-num">4.9 / 5.0</span>
+            <span class="stat-label">Avaliação dos Clientes</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Seção de Serviços -->
+    <section id="servicos" class="servicos section-padding bg-alt">
+      <div class="container">
+        <div class="section-title">
+          <h2>Tabela de Serviços</h2>
+          <p>Escolha o atendimento ideal para sua rotina</p>
+        </div>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Corte Tradicional</h3>
+            <p class="duracao">30-40 min</p>
+            <p class="descricao">Lavagem especial, corte na tesoura ou máquina e finalização com pomada modeladora.</p>
+            <p class="preco">R$ 45,00</p>
+          </article>
+          <article class="card destaque-card">
+            <span class="badge">Mais Procurado</span>
+            <h3>Barba &amp; Toalha Quente</h3>
+            <p class="duracao">35 min</p>
+            <p class="descricao">Desenho da barba, toalha quente aromática, hidratação de fios e pós-barba refrescante.</p>
+            <p class="preco">R$ 40,00</p>
+          </article>
+          <article class="card">
+            <h3>Combo Completo</h3>
+            <p class="duracao">60 min</p>
+            <p class="descricao">Corte completo + tratamento de barba com direito a sobrancelha alinhada na navalha.</p>
+            <p class="preco">R$ 75,00</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Horários de Funcionamento -->
+    <section id="horarios" class="horarios section-padding">
+      <div class="container text-center">
+        <h2>Horários de Funcionamento</h2>
+        <div class="horarios-table-container">
+          <table class="tabela-horarios">
+            <caption>Programação semanal de atendimento</caption>
+            <thead>
+              <tr>
+                <th scope="col">Dia</th>
+                <th scope="col">Horário</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Segunda a Sexta-feira</td>
+                <td>09h00 às 20h00</td>
+              </tr>
+              <tr>
+                <td>Sábado</td>
+                <td>08h30 às 18h00</td>
+              </tr>
+              <tr>
+                <td>Domingo e Feriados</td>
+                <td>Fechado</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário de Pré-Agendamento com Envio Direto ao WhatsApp -->
+    <section id="contato" class="contato section-padding bg-alt">
+      <div class="container">
+        <div class="section-title">
+          <h2>Agende seu Horário</h2>
+          <p>Preencha os dados para enviar a confirmação direto no nosso WhatsApp</p>
+        </div>
+
+        <form id="form-agendamento" class="form-container">
+          <fieldset>
+            <legend>Informações do Cliente</legend>
+            <div class="form-group">
+              <label for="nome">Nome Completo:</label>
+              <input type="text" id="nome" name="nome" placeholder="Ex: Carlos Silva" required>
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone / WhatsApp:</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="Ex: (43) 99999-9999" required>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Detalhes do Agendamento</legend>
+            <div class="form-group">
+              <label for="servico">Serviço Pretendido:</label>
+              <select id="servico" name="servico" required>
+                <option value="" disabled selected>Selecione um serviço</option>
+                <option value="Corte Tradicional (R$ 45,00)">Corte Tradicional (R$ 45,00)</option>
+                <option value="Barba e Toalha Quente (R$ 40,00)">Barba e Toalha Quente (R$ 40,00)</option>
+                <option value="Combo Completo (R$ 75,00)">Combo Completo (R$ 75,00)</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="data">Data Desejada:</label>
+                <input type="date" id="data" name="data" required>
+              </div>
+              <div class="form-group">
+                <label for="hora">Horário:</label>
+                <input type="time" id="hora" name="hora" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn-primary btn-block">Confirmar via WhatsApp</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="logo-footer">Navalha<span>de</span>Ouro</p>
+        <p>A experiência clássica que seu estilo merece.</p>
+      </div>
+      <div>
+        <address>
+          <strong>Endereço:</strong><br>
+          Rua Central, 1250 - Centro<br>
+          Londrina - PR
+        </address>
+      </div>
+      <div>
+        <strong>Contato:</strong><br>
+        <a href="tel:43999999999">(43) 99999-9999</a><br>
+        contato@navalhadedeouro.com.br
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Barbearia Navalha de Ouro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
